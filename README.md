@@ -11,7 +11,12 @@ the bare host, which is what this repository is for.
 | File | What |
 |---|---|
 | `app-ads.txt` | The authorised sellers list, at `https://jqdevam.github.io/app-ads.txt`. |
-| `index.html` | A page for the host to answer with, linking to Pin16 and its privacy policy. |
+| `index.html` | The developer page: one card per app, each linking to the app's own site and privacy policy. |
+| `pin16.png`, `tintora.png` | The app icons the cards show, copied from each app's `site/`. |
+
+**Adding an app:** copy one `<article class="app …">` in `index.html`, give it
+a class with its own `--accent` (light and dark) in the style block, and add
+its icon. The app's own pages live in its own `<app>-site` repository.
 
 ## app-ads.txt
 
