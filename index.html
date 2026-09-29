@@ -4,29 +4,34 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>jqdevAM</title>
-<meta name="description" content="Android apps by jqdevAM. Pin16 — offline OBD-II car diagnostics.">
-<link rel="icon" href="pin16.png">
+<meta name="description" content="Apps by jqdevAM: Pin16 — offline OBD-II car diagnostics; Tintora — offline colour identification for interiors.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232b2d31'/%3E%3Ctext x='32' y='41' font-family='system-ui,sans-serif' font-size='26' font-weight='700' fill='%23fff' text-anchor='middle'%3Ejq%3C/text%3E%3C/svg%3E">
 <style>
   :root {
     color-scheme: light dark;
-    --bg: #f6f8fa;
+    --bg: #f5f6f7;
     --panel: #ffffff;
-    --ink: #0d1b26;
-    --muted: #4d6577;
-    --line: #dfe6ec;
-    --accent: #0b5586;
-    --accent-ink: #ffffff;
+    --ink: #16181b;
+    --muted: #5a5f66;
+    --line: #dfe2e6;
+    --mark: #2b2d31;
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #08131c;
-      --panel: #0f2029;
-      --ink: #e8f1f7;
-      --muted: #9db2c2;
-      --line: #1e3644;
-      --accent: #3fb1e8;
-      --accent-ink: #042e4c;
+      --bg: #0f1113;
+      --panel: #181b1e;
+      --ink: #e9ebee;
+      --muted: #a2a8b0;
+      --line: #2a2e33;
+      --mark: #e9ebee;
     }
+  }
+  /* Each app card carries its own accent, taken from the app's own look. */
+  .app.pin16 { --accent: #0b5586; --accent-ink: #ffffff; }
+  .app.tintora { --accent: #4e4a46; --accent-ink: #ffffff; }
+  @media (prefers-color-scheme: dark) {
+    .app.pin16 { --accent: #3fb1e8; --accent-ink: #042e4c; }
+    .app.tintora { --accent: #d9d4cc; --accent-ink: #1a1a19; }
   }
   * { box-sizing: border-box; }
   body {
@@ -37,31 +42,51 @@
     font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
     -webkit-font-smoothing: antialiased;
   }
-  main { max-width: 36rem; margin: 0 auto; }
-  header { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; }
-  header img {
-    width: 64px; height: 64px; border-radius: 14px; display: block;
-    box-shadow: 0 2px 10px rgb(4 46 76 / .18);
+  main { max-width: 62rem; margin: 0 auto; }
+  .site { display: flex; align-items: center; gap: 16px; margin-bottom: 12px; }
+  .mark {
+    width: 56px; height: 56px; border-radius: 14px; flex: none;
+    display: grid; place-items: center;
+    background: var(--mark); color: var(--bg);
+    font-weight: 700; font-size: 1.4rem; letter-spacing: -.02em;
   }
   h1 { font-size: 1.75rem; line-height: 1.2; margin: 0 0 2px; letter-spacing: -.02em; }
   .tagline { color: var(--muted); margin: 0; }
-  h2 {
+  .intro { max-width: 40rem; margin: 20px 0 8px; }
+  h2.section {
     font-size: .8rem; text-transform: uppercase; letter-spacing: .08em;
-    color: var(--muted); margin: 32px 0 10px; font-weight: 600;
+    color: var(--muted); margin: 32px 0 12px; font-weight: 600;
   }
-  p { margin: 0 0 14px; }
-  .panel {
+  .apps {
+    display: grid; gap: 18px;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+  }
+  .app {
     background: var(--panel); border: 1px solid var(--line);
-    border-radius: 14px; padding: 18px 20px;
+    border-radius: 16px; padding: 20px 22px;
+    display: flex; flex-direction: column;
   }
-  ul { margin: 0; padding: 0; list-style: none; }
+  .app header { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+  .app header img {
+    width: 56px; height: 56px; border-radius: 13px; display: block; flex: none;
+    box-shadow: 0 2px 10px rgb(0 0 0 / .16);
+  }
+  .app h3 { font-size: 1.3rem; margin: 0; letter-spacing: -.01em; }
+  .app .what { color: var(--muted); margin: 0; font-size: .95rem; line-height: 1.4; }
+  p { margin: 0 0 14px; }
+  ul { margin: 0 0 14px; padding: 0; list-style: none; }
   ul li { padding: 9px 0; border-top: 1px solid var(--line); }
   ul li:first-child { border-top: 0; padding-top: 0; }
-  ul li:last-child { padding-bottom: 0; }
   ul strong { display: block; font-weight: 600; }
   ul span { color: var(--muted); font-size: .94rem; }
-  a { color: var(--accent); text-underline-offset: 2px; }
-  .links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+  dl.facts {
+    display: grid; grid-template-columns: auto 1fr; gap: 2px 12px;
+    margin: 0 0 16px; font-size: .9rem;
+  }
+  dl.facts dt { color: var(--muted); }
+  dl.facts dd { margin: 0; }
+  a { color: var(--accent, var(--ink)); text-underline-offset: 2px; }
+  .links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto; }
   .links a {
     display: inline-block; padding: 9px 16px; border-radius: 999px;
     border: 1px solid var(--line); background: var(--panel);
@@ -79,45 +104,98 @@
 <body>
 <main>
 
-  <header>
-    <img src="pin16.png" alt="" width="64" height="64">
+  <div class="site">
+    <div class="mark" aria-hidden="true">jq</div>
     <div>
       <h1>jqdevAM</h1>
-      <p class="tagline">Android apps, made one at a time.</p>
-    </div>
-  </header>
-
-  <h2>Pin16</h2>
-  <div class="panel">
-    <p><strong>Car diagnostics with an OBD-II adapter.</strong> Plug an
-    ELM327-class adapter into the port under the dashboard, and Pin16 reads
-    what the car reports and explains it in plain words.</p>
-    <ul>
-      <li>
-        <strong>It works with no signal</strong>
-        <span>Every fault-code explanation ships inside the app. A car park
-        under a building is where diagnostics usually happen.</span>
-      </li>
-      <li>
-        <strong>It finds codes other apps miss</strong>
-        <span>Stored, pending and permanent codes, and the module's own fault
-        memory — which is where a code like P1000 hides.</span>
-      </li>
-      <li>
-        <strong>Your car's data stays on your phone</strong>
-        <span>No account, no server of ours. Reports leave only when you send
-        one yourself.</span>
-      </li>
-    </ul>
-    <div class="links">
-      <a class="primary" href="https://jqdevam.github.io/pin16-site/">About Pin16</a>
-      <a href="https://jqdevam.github.io/pin16-site/privacy/">Privacy policy</a>
+      <p class="tagline">Apps, made one at a time.</p>
     </div>
   </div>
 
-  <h2>Languages</h2>
-  <p>Pin16 speaks English, Deutsch, Français, Italiano and Русский — and so
-  does its privacy policy.</p>
+  <p class="intro">Small, careful apps that do one job well and work without a
+  connection: everything they need to explain their answers ships inside them.
+  No accounts, and no servers of ours. Each app's privacy policy says exactly
+  what it stores and what, if anything, leaves your device.</p>
+
+  <h2 class="section">Apps</h2>
+  <div class="apps">
+
+    <article class="app pin16">
+      <header>
+        <img src="pin16.png" alt="" width="56" height="56">
+        <div>
+          <h3>Pin16</h3>
+          <p class="what">Car diagnostics with an OBD-II adapter.</p>
+        </div>
+      </header>
+      <p>Plug an ELM327-class adapter into the port under the dashboard, and
+      Pin16 reads what the car reports and explains it in plain words.</p>
+      <ul>
+        <li>
+          <strong>It works with no signal</strong>
+          <span>Every fault-code explanation ships inside the app. A car park
+          under a building is where diagnostics usually happen.</span>
+        </li>
+        <li>
+          <strong>It finds codes other apps miss</strong>
+          <span>Stored, pending and permanent codes, and the module's own fault
+          memory — which is where a code like P1000 hides.</span>
+        </li>
+        <li>
+          <strong>Your car's data stays on your phone</strong>
+          <span>No account, no server of ours. Reports leave only when you send
+          one yourself.</span>
+        </li>
+      </ul>
+      <dl class="facts">
+        <dt>Platforms</dt><dd>Android</dd>
+        <dt>Languages</dt><dd>English, Deutsch, Français, Italiano, Русский</dd>
+      </dl>
+      <div class="links">
+        <a class="primary" href="https://jqdevam.github.io/pin16-site/">About Pin16</a>
+        <a href="https://jqdevam.github.io/pin16-site/privacy/">Privacy policy</a>
+      </div>
+    </article>
+
+    <article class="app tintora">
+      <header>
+        <img src="tintora.png" alt="" width="56" height="56">
+        <div>
+          <h3>Tintora</h3>
+          <p class="what">Identify any colour from a photo, offline.</p>
+        </div>
+      </header>
+      <p>Photograph a wall, a sofa or a tile and touch the colour you want.
+      Tintora says what it is, in the codes designers and paint shops use, and
+      what it will do in a room.</p>
+      <ul>
+        <li>
+          <strong>It measures what you touch</strong>
+          <span>A magnifier for the exact spot, an area rather than one noisy
+          pixel, and a correction for the colour of the light.</span>
+        </li>
+        <li>
+          <strong>It explains it in every system it knows</strong>
+          <span>HEX, RGB, CMYK, Lab and more, the nearest named colours, a
+          Munsell notation and the nearest Federal Standard 595 paint.</span>
+        </li>
+        <li>
+          <strong>Your photos stay on your device</strong>
+          <span>It never connects to the internet. Photos and colours are
+          stored encrypted and leave only when you share them.</span>
+        </li>
+      </ul>
+      <dl class="facts">
+        <dt>Platforms</dt><dd>Android, iOS, macOS, Windows, Linux, web</dd>
+        <dt>Languages</dt><dd>English, Deutsch, Français, Italiano, Русский</dd>
+      </dl>
+      <div class="links">
+        <a class="primary" href="https://jqdevam.github.io/tintora-site/">About Tintora</a>
+        <a href="https://jqdevam.github.io/tintora-site/privacy/">Privacy policy</a>
+      </div>
+    </article>
+
+  </div>
 
   <footer>
     Contact: <a href="mailto:amaldavanau@gmail.com">amaldavanau@gmail.com</a>
