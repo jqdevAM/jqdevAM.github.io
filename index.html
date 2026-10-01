@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>jqdevAM</title>
-<meta name="description" content="Apps by jqdevAM: Pin16 — offline OBD-II car diagnostics; Tintora — colour identification for interiors.">
+<meta name="description" content="Apps by jqdevAM: Pin16 — offline OBD-II car diagnostics; Tintora — colour identification for interiors; Wobblo — soft cartoon friends that wobble, as a live wallpaper too.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232b2d31'/%3E%3Ctext x='32' y='41' font-family='system-ui,sans-serif' font-size='26' font-weight='700' fill='%23fff' text-anchor='middle'%3Ejq%3C/text%3E%3C/svg%3E">
 <style>
   :root {
@@ -29,9 +29,11 @@
   /* Each app card carries its own accent, taken from the app's own look. */
   .app.pin16 { --accent: #0b5586; --accent-ink: #ffffff; }
   .app.tintora { --accent: #4e4a46; --accent-ink: #ffffff; }
+  .app.wobblo { --accent: #d63c63; --accent-ink: #ffffff; }
   @media (prefers-color-scheme: dark) {
     .app.pin16 { --accent: #3fb1e8; --accent-ink: #042e4c; }
     .app.tintora { --accent: #d9d4cc; --accent-ink: #1a1a19; }
+    .app.wobblo { --accent: #ff8fa8; --accent-ink: #2b1018; }
   }
   * { box-sizing: border-box; }
   body {
@@ -193,6 +195,44 @@
       <div class="links">
         <a class="primary" href="https://jqdevam.github.io/tintora-site/">About Tintora</a>
         <a href="https://jqdevam.github.io/tintora-site/privacy/">Privacy policy</a>
+      </div>
+    </article>
+
+    <article class="app wobblo">
+      <header>
+        <img src="wobblo.png" alt="" width="56" height="56">
+        <div>
+          <h3>Wobblo</h3>
+          <p class="what">Soft cartoon friends that wobble.</p>
+        </div>
+      </header>
+      <p>Tilt the phone and their cheeks, bellies and googly eyes slosh about;
+      shake it, or grab a soft bit and flick it. Any friend can be your live
+      wallpaper, and keeps wobbling there.</p>
+      <ul>
+        <li>
+          <strong>The wobble is real physics</strong>
+          <span>Every soft part is a chain of sixteen bodies, simulated as you
+          move the phone.</span>
+        </li>
+        <li>
+          <strong>On your home screen too</strong>
+          <span>A live wallpaper, and a widget to switch friends, give a heart
+          or open Settings.</span>
+        </li>
+        <li>
+          <strong>It collects nothing</strong>
+          <span>No permissions and no internet access, so nothing can leave
+          your phone. No account, no ads, no analytics.</span>
+        </li>
+      </ul>
+      <dl class="facts">
+        <dt>Platforms</dt><dd>Android</dd>
+        <dt>Languages</dt><dd>English, Русский</dd>
+      </dl>
+      <div class="links">
+        <a class="primary" href="https://jqdevam.github.io/wobblo-site/">About Wobblo</a>
+        <a href="https://jqdevam.github.io/wobblo-site/privacy/">Privacy policy</a>
       </div>
     </article>
 
