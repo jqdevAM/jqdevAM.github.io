@@ -20,17 +20,29 @@ its icon. The app's own pages live in its own `<app>-site` repository.
 
 ## app-ads.txt
 
-**Issued by the ad network, not written here.** It is downloaded whole from
-the Yandex partner interface and committed unchanged. The one record that is
-this account's own is `yandex.com, <partner id>, DIRECT`; everything else is
-a reseller the network authorises on its behalf.
+**Issued by the ad networks, not written here.** One file for every app on
+this host, so it carries **both** networks the apps use, each list committed
+as its network issued it:
+
+- **Yandex** — downloaded whole from the Yandex partner interface: the
+  account's own `yandex.com, 106035853, DIRECT` and the resellers. The top of
+  the file.
+- **Start.io** (pin16 and Wibblewall) — from the Start.io portal: the
+  account's own `start.io, 174889717, DIRECT` and its resellers, appended
+  after a `# Start.io` comment. Lines Yandex's list already had are not
+  repeated.
+
+Everything but the two `DIRECT` account lines is a reseller the network
+authorises on its behalf. **Never replace the file with one network's list**:
+the other network's inventory, in another app, would become unauthorised.
 
 Yandex re-reads the file once a day. Some demand-side platforms do not buy
 impressions from an app whose developer site has no `app-ads.txt` at all, so
 a stale or missing file is lost revenue rather than a paperwork failure.
 
-**To update it:** download the current list from the partner interface,
-replace the file, commit. Do not hand-edit records — a wrong ID here reads as
+**To update it:** download the network's current list from its portal and
+replace that network's part only — Yandex's above the `# Start.io` comment,
+Start.io's below it — then commit. Do not hand-edit records — a wrong ID here reads as
 this app authorising a seller it does not use.
 
 **The Play listing has to point here.** The crawler takes the developer
