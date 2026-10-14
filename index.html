@@ -30,10 +30,12 @@
   .app.pin16 { --accent: #0b5586; --accent-ink: #ffffff; }
   .app.tintora { --accent: #4e4a46; --accent-ink: #ffffff; }
   .app.wobblo { --accent: #d63c63; --accent-ink: #ffffff; }
+  .app.verdict { --accent: #0e74c8; --accent-ink: #ffffff; }
   @media (prefers-color-scheme: dark) {
     .app.pin16 { --accent: #3fb1e8; --accent-ink: #042e4c; }
     .app.tintora { --accent: #d9d4cc; --accent-ink: #1a1a19; }
     .app.wobblo { --accent: #ff8fa8; --accent-ink: #2b1018; }
+    .app.verdict { --accent: #22d3ee; --accent-ink: #04263d; }
   }
   * { box-sizing: border-box; }
   body {
@@ -233,6 +235,44 @@
       <div class="links">
         <a class="primary" href="https://jqdevam.github.io/wobblo-site/">About Wibblewall</a>
         <a href="https://jqdevam.github.io/wobblo-site/privacy/">Privacy policy</a>
+      </div>
+    </article>
+
+    <article class="app verdict">
+      <header>
+        <img src="verdict.png" alt="" width="56" height="56">
+        <div>
+          <h3>Verdict</h3>
+          <p class="what">Google Play review results, on your phone.</p>
+        </div>
+      </header>
+      <p>For app developers: sign in with the account you use for the Play
+      Console, and Verdict tells you when Google approves, rejects or
+      publishes a release — without opening the console to check.</p>
+      <ul>
+        <li>
+          <strong>Every release, with its review state</strong>
+          <span>Per app and per track, and a notification when Google
+          answers.</span>
+        </li>
+        <li>
+          <strong>Reviews and vitals</strong>
+          <span>Reply to reviews with canned answers; see each app's crash and
+          ANR rates.</span>
+        </li>
+        <li>
+          <strong>Talks to Google and nobody else</strong>
+          <span>No server of ours, no ads, no analytics. Signing out revokes
+          its access.</span>
+        </li>
+      </ul>
+      <dl class="facts">
+        <dt>Platforms</dt><dd>Android</dd>
+        <dt>Languages</dt><dd>English, Deutsch, Français, Italiano, Русский</dd>
+      </dl>
+      <div class="links">
+        <a class="primary" href="https://jqdevam.github.io/verdict-site/">About Verdict</a>
+        <a href="https://jqdevam.github.io/verdict-site/privacy/">Privacy policy</a>
       </div>
     </article>
 
