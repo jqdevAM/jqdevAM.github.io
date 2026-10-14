@@ -11,6 +11,7 @@ the bare host, which is what this repository is for.
 | File | What |
 |---|---|
 | `app-ads.txt` | The authorised sellers list, at `https://jqdevam.github.io/app-ads.txt`. |
+| `google6823666341c29d91.html` | Search Console's proof that this host is ours. **Do not delete**: Google re-checks it, and Verdict's OAuth consent screen depends on the domain staying verified. |
 | `index.html` | The developer page: one card per app, each linking to the app's own site and privacy policy. |
 | `pin16.png`, `tintora.png`, `wobblo.png`, `verdict.png` | The app icons the cards show, copied from each app's `site/`. |
 
