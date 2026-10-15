@@ -26,17 +26,22 @@ its icon. The app's own pages live in its own `<app>-site` repository.
 this host, so it carries **both** networks the apps use, each list committed
 as its network issued it:
 
-- **Yandex** (Pin16, since 2026-10-15) — downloaded whole from the Yandex
-  partner interface: the account's own `yandex.com, 106035853, DIRECT` and
-  the resellers. The top of the file.
-- **Start.io** (Wibblewall and Kulora) — from the Start.io portal: the
+- **Yandex** (all three apps, since 2026-10-15) — downloaded whole from the
+  Yandex partner interface: the account's own
+  `yandex.com, 106035853, DIRECT` and the resellers. The top of the file.
+- **Start.io** (no app, since 2026-10-15) — from the Start.io portal: the
   account's own `start.io, 174889717, DIRECT` and its resellers, appended
   after a `# Start.io` comment. Lines Yandex's list already had are not
-  repeated.
+  repeated. **Kept although nothing is served by it**: a banner is one
+  `slots.` line from going back, and a list removed is a list to be asked
+  for again.
 
 Everything but the two `DIRECT` account lines is a reseller the network
-authorises on its behalf. **Never replace the file with one network's list**:
-the other network's inventory, in another app, would become unauthorised.
+authorises on its behalf. **Never replace the file with one network's
+list.** It cost nothing on 15 October, when the last app moved to Yandex and
+Start.io's half became dead weight rather than load-bearing; it costs an
+app's revenue on the day one banner goes back, and nothing in any app or
+console says that it has.
 
 Yandex re-reads the file once a day. Some demand-side platforms do not buy
 impressions from an app whose developer site has no `app-ads.txt` at all, so
