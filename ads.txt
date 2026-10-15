@@ -1,0 +1,17 @@
+# Who is authorised to sell this host's *web* inventory, as Yandex issued
+# it. The pages served here -- the developer page and the apps' privacy
+# policies -- carry no advertising at all, so nothing listed below can be
+# bought; the file is published because the network issues it beside
+# app-ads.txt, and an account with one of the two missing is an account
+# whose checks half pass.
+#
+# app-ads.txt is the one that matters: it is the file the apps are verified
+# by. The README beside this file says the rest.
+google.com, pub-5533854580432370, RESELLER, f08c47fec0942fa0
+improvedigital.com, 2031, RESELLER
+yandex.com, 106035853, DIRECT
+uis.mobfox.com, 165, RESELLER
+hyperad.tech, 215, RESELLER
+betweendigital.com, 43554, RESELLER
+Contextweb.com, 562899, RESELLER, 89ff185a4c4e857c
+hyperad.tech, 150, RESELLER
