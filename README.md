@@ -20,6 +20,42 @@ the bare host, which is what this repository is for.
 a class with its own `--accent` (light and dark) in the style block, and add
 its icon. The app's own pages live in its own `<app>-site` repository.
 
+## The repositories
+
+**Nine, and the split is deliberate.** Four app repositories, private,
+where the code and the docs live; a public mirror for each, holding only the
+pages the public is meant to reach; and this one, which is the host itself.
+
+| Repository | Public | What it holds |
+|---|---|---|
+| `pin16` | no | **Pin16** — OBD-II diagnostics, Flutter, `com.amaldavanau.pin16` |
+| `tintora` | no | **Kulora** — the colour app, Flutter |
+| `wobblo` | no | **Wibblewall** — the live wallpaper, Android/Kotlin |
+| `verdict` | no | **Verdict** — the Play review-state watcher, Android/Kotlin |
+| `pin16-site`, `tintora-site`, `wobblo-site`, `verdict-site` | yes | A copy of that app's `site/`: the page about the app, and the privacy policy its listing links to |
+| `jqdevAM.github.io` | yes | This: the sellers files, Search Console's proof, and the developer page all four listings name |
+
+The four apps are one body of work by one developer, and a decision taken in
+one — the ad network, the consent question, a sentence of policy, a default
+in a build script — is nearly always the same decision in the others.
+
+**A mirror is a second push, and nothing fails when it is skipped.** The
+policy is written and reviewed in the app repository; the copy in the
+`-site` repository is the only one anybody reads. On 16 October 2026 three
+of the four were behind the policies they publish:
+
+- **Kulora's** still named Start.io as the network serving both banners, a
+  day after the app moved back to Yandex;
+- **Wibblewall's** still named Start.io too, and still said the app asks for
+  nothing needing your approval — on the day it began asking for permission
+  to notify;
+- **Pin16's** was three weeks old: it named the right network, but not the
+  three permissions its SDK declares, nor the unused Start.io SDK that is
+  still in the build.
+
+Nothing in Play Console, in either app, or in any build says a word about
+it. `diff` between the two copies is the only check there is.
+
 ## app-ads.txt
 
 **Issued by the ad networks, not written here.** One file for every app on
