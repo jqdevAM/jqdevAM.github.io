@@ -1,4 +1,13 @@
 User-agent: *
 Allow: /
 
+# Yandex reads only its own group when one exists, so it repeats Allow.
+# Clean-param: the code search takes its query as ?q=, and every code page
+# links to a few hundred such addresses, which are the same page as the
+# search itself. Yandex treats them as one instead of crawling each.
+User-agent: Yandex
+Allow: /
+Clean-param: q /pin16-site/codes/
+Clean-param: q /pin16-site/ru/codes/
+
 Sitemap: https://jqdevam.github.io/pin16-site/sitemap.xml
