@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jqdevam.github.io/pin16-site/sitemap.xml
