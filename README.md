@@ -14,6 +14,7 @@ the bare host, which is what this repository is for.
 | `ads.txt` | The same for this host's *web* inventory, of which there is none. Published because the network issues both and an account missing one half-passes its checks. |
 | `google6823666341c29d91.html` | Search Console's proof that this host is ours. **Do not delete**: Google re-checks it, and Verdict's OAuth consent screen depends on the domain staying verified. |
 | `yandex_708eb66831f3c345.html` | Yandex Webmaster's proof that this host is ours. **Do not delete**: Yandex re-checks it. |
+| `e0786c3455344e1aa1606201245e5e9f.txt` | The IndexNow key: proof that a list of new pages sent to Yandex comes from this host. Sent by `tool/site/indexnow.py` in the Pin16 repository. **Do not delete** while that is in use. |
 | `robots.txt` | Lets crawlers in and names each app's sitemap. Crawlers read it only at the host root, which is why it lives here and not in an app's site. Pin16's sitemap lists its fault-code pages; add a `Sitemap:` line when another app publishes one. The Yandex group's `Clean-param` folds the code search's `?q=` addresses into the one page they are. |
 | `index.html` | The developer page: one card per app, each linking to the app's own site and privacy policy. |
 | `pin16.png`, `tintora.png`, `wobblo.png`, `verdict.png` | The app icons the cards show, copied from each app's `site/`. |
