@@ -17,7 +17,7 @@ the bare host, which is what this repository is for.
 | `e0786c3455344e1aa1606201245e5e9f.txt` | The IndexNow key: proof that a list of new pages sent to Yandex comes from this host. Sent by `tool/site/indexnow.py` in the Pin16 repository. **Do not delete** while that is in use. |
 | `robots.txt` | Lets crawlers in and names each app's sitemap. Crawlers read it only at the host root, which is why it lives here and not in an app's site. Pin16's sitemap lists its fault-code pages; add a `Sitemap:` line when another app publishes one. The Yandex group's `Clean-param` folds the code search's `?q=` addresses into the one page they are. |
 | `index.html` | The developer page: one card per app, each linking to the app's own site and privacy policy. |
-| `pin16.png`, `tintora.png`, `wobblo.png`, `verdict.png` | The app icons the cards show, copied from each app's `site/`. |
+| `pin16.png`, `tintora.png`, `wobblo.png`, `cauldoku.png` | The app icons the cards show, copied from each app's `site/`. |
 
 **Adding an app:** copy one `<article class="app …">` in `index.html`, give it
 a class with its own `--accent` (light and dark) in the style block, and add
@@ -25,7 +25,7 @@ its icon. The app's own pages live in its own `<app>-site` repository.
 
 ## The repositories
 
-**Nine, and the split is deliberate.** Four app repositories, private,
+**Eleven, and the split is deliberate.** Five app repositories, private,
 where the code and the docs live; a public mirror for each, holding only the
 pages the public is meant to reach; and this one, which is the host itself.
 
@@ -34,8 +34,9 @@ pages the public is meant to reach; and this one, which is the host itself.
 | `pin16` | no | **Pin16** — OBD-II diagnostics, Flutter, `com.amaldavanau.pin16` |
 | `tintora` | no | **Kulora** — the colour app, Flutter |
 | `wobblo` | no | **Wibblewall** — the live wallpaper, Android/Kotlin |
-| `verdict` | no | **Verdict** — the Play review-state watcher, Android/Kotlin |
-| `pin16-site`, `tintora-site`, `wobblo-site`, `verdict-site` | yes | A copy of that app's `site/`: the page about the app, and the privacy policy its listing links to |
+| `verdict` | no | **Verdict** — the Play review-state watcher, Android/Kotlin. **Not on the developer page since 2026-11-18**; its own site and policy stay published |
+| `cauldoku` | no | **Cauldoku** — the potion logic puzzle, Flutter, `com.amaldavanau.cauldoku` |
+| `pin16-site`, `tintora-site`, `wobblo-site`, `verdict-site`, `cauldoku-site` | yes | A copy of that app's `site/`: the page about the app, and the privacy policy its listing links to |
 | `jqdevAM.github.io` | yes | This: the sellers files, Search Console's proof, and the developer page all four listings name |
 
 The four apps are one body of work by one developer, and a decision taken in
